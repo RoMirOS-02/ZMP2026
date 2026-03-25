@@ -20,30 +20,11 @@ int phi(int n) {
     return result;
 }
 
-int F(int n) {
-    int sum = 0;
-
-    for (int d = 1; d * d <= n; d++) {
-        if (n % d == 0) {
-            sum += phi(d);
-
-            if (d != n / d)
-                sum += phi(n / d);
-        }
-    }
-
-    return sum;
-}
-
 int main() {
     int n;
     cin >> n;
 
-    // a)
     cout << "phi(n) = " << phi(n) << endl;
-
-    // b)
-    cout << "F(n) = " << F(n) << endl;
 
     return 0;
 }
