@@ -1,15 +1,23 @@
-# include <iostream>
-# include <list>
+#include <iostream>
 
-using namespace std ;
+using namespace std;
 
-int main () {
-    int n, x, a;
+int main() {
+    int x, n, a;
     cin >> x >> n;
-    list <int> L;
-    for (int i=0; i < n; i++){
+
+    int idx = -1;
+
+    for (int i = 0; i < n; i++) {
         cin >> a;
-        L.push_back (a);
+        if (a == x && idx == -1) {
+            idx = i;
+        }
     }
-    cout << L.size();
+
+    if (idx == -1) {
+        cout << "nie";
+    } else {
+        cout << "tak " << idx;
+    }
 }
